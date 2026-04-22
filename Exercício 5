@@ -1,0 +1,69 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    string nomes[8];
+    int tempos[8];
+
+    for(int i = 0; i < 8; i++) {
+        cout << "Nome do atleta " << i+1 << ": ";
+        cin >> nomes[i];
+        cout << "Tempo (segundos): ";
+        cin >> tempos[i];
+    }
+
+    for(int i = 0; i < 7; i++) {
+        for(int j = i+1; j < 8; j++) {
+            if(tempos[i] > tempos[j]) {
+                int tempT = tempos[i];
+                tempos[i] = tempos[j];
+                tempos[j] = tempT;
+
+                string tempN = nomes[i];
+                nomes[i] = nomes[j];
+                nomes[j] = tempN;
+            }
+        }
+    }
+
+    cout << "\n--- Classificacao (mais rapido ao mais lento) ---\n";
+    for(int i = 0; i < 8; i++) {
+        cout << i+1 << ". " << nomes[i] << " - " << tempos[i] << " segundos" << endl;
+    }
+
+    return 0;
+}#include <iostream>
+using namespace std;
+
+int main() {
+    string nomes[8];
+    int tempos[8];
+
+    for(int i = 0; i < 8; i++) {
+        cout << "Nome do atleta " << i+1 << ": ";
+        cin >> nomes[i];
+        cout << "Tempo (segundos): ";
+        cin >> tempos[i];
+    }
+
+    for(int i = 0; i < 7; i++) {
+        for(int j = i+1; j < 8; j++) {
+            if(tempos[i] > tempos[j]) {
+                int tempT = tempos[i];
+                tempos[i] = tempos[j];
+                tempos[j] = tempT;
+
+                string tempN = nomes[i];
+                nomes[i] = nomes[j];
+                nomes[j] = tempN;
+            }
+        }
+    }
+
+    cout << "\n--- Classificacao (mais rapido ao mais lento) ---\n";
+    for(int i = 0; i < 8; i++) {
+        cout << i+1 << ". " << nomes[i] << " - " << tempos[i] << " segundos" << endl;
+    }
+
+    return 0;
+}
