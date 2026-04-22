@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    string nome[5];
+    float preco[5];
+    int quantidade[5];
+    float subtotal[5];
+    float total = 0;
+
+    for(int i = 0; i < 5; i++) {
+        cout << "Item " << i+1 << " - Nome: ";
+        cin >> nome[i];
+        cout << "Preco unitario: ";
+        cin >> preco[i];
+        cout << "Quantidade comprada: ";
+        cin >> quantidade[i];
+        subtotal[i] = preco[i] * quantidade[i];
+        total += subtotal[i];
+    }
+
+    cout << "--- Itens ---" << endl;
+    for(int i = 0; i < 5; i++) {
+        cout << nome[i] << " -> Subtotal: " << subtotal[i] << " MT" << endl;
+    }
+
+    if(total > 1000) {
+        float desconto = total * 0.10;
+        cout << "Total bruto: " << total << " MT" << endl;
+        cout << "Desconto de 10%: " << desconto << " MT" << endl;
+        total -= desconto;
+    }
+
+    cout << "Valor total da fatura: " << total << " MT" << endl;
+
+    return 0;
+}
