@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    string nomes[15];
+    float medias[15];
+    int aprovados = 0;
+
+    for(int i = 0; i < 15; i++) {
+        cout << "Nome do aluno " << i+1 << ": ";
+        cin >> nomes[i];
+        cout << "Media final: ";
+        cin >> medias[i];
+        if(medias[i] >= 10) {
+            aprovados++;
+        }
+    }
+
+    cout << "Alunos aprovados (media >= 10):" << endl;
+    for(int i = 0; i < 15; i++) {
+        if(medias[i] >= 10) {
+            cout << nomes[i] << endl;
+        }
+    }
+
+    float perc = (aprovados / 15.0) * 100;
+    cout << "Percentagem de aprovacao: " << perc << "%" << endl;
+
+    return 0;
+}
